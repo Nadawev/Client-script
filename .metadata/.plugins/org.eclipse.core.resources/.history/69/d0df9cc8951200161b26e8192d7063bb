@@ -1,0 +1,17 @@
+var ws = new WebSocket("ws://127.0.0.1:1659/");
+
+ws.onopen = function() {
+    ws.send("say Welcome you are conected")
+};
+
+ws.onmessage = function (event) {
+	  console.log(event.data);
+}
+
+ws.onclose = function() {
+    alert("Closed!");
+};
+
+ws.onerror = function(err) {
+    alert("Error: " + err);
+};
